@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <tekim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 11:03:32 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/03 12:26:11 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:46:06 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int					ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s1[i] && i < n)

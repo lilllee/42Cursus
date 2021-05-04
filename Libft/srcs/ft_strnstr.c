@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <tekim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 12:31:50 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/03 15:32:18 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:46:14 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char		*ft_strnstr(const char *str, const char *substr, size_t len)
+#include "libft.h"
+
+char		*ft_strnstr(const char *str, const char *substr, unsigned int len)
 {
-	size_t i;
-	size_t j;
+	unsigned int i;
+	unsigned int j;
 
 	i = 0;
 	j = 0;

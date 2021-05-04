@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <tekim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:33:16 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/03 12:25:37 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:44:23 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int		ft_strlen(char *str)
+#include "libft.h"
+
+unsigned int		ft_strlen2(char *str)
 {
 	unsigned int i;
 

@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 12:26:19 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/04 15:46:47 by tekim            ###   ########.fr       */
+/*   Created: 2021/05/04 13:59:27 by tekim             #+#    #+#             */
+/*   Updated: 2021/05/04 15:59:36 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void				*ft_memccpy(void *d, const void *s, int c, unsigned int n)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c - 'A' + 'a';
-	return (c);
+	char			*tmp;
+	const char		*tmps;
+
+	tmps = s;
+	tmp = d;
+	while (n--)
+	{
+		*tmp = *tmps;
+		tmp++;
+		tmps++;
+		if (*tmps == (char)c)
+		{
+			tmps++;
+			*tmp = *tmps;
+			break ;
+		}
+	}
+	return (d);
 }

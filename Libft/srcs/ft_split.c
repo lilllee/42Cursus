@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 16:37:32 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/03 18:41:47 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/04 15:43:19 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int			ft_len(char *ptr, char c)
 {

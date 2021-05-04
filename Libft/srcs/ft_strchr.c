@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <tekim@student.42seoul.kr>           +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 13:02:56 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/03 15:07:30 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/04 16:05:42 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 const char		*ft_strchr(const char *str, int c)
 {

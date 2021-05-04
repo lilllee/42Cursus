@@ -16,21 +16,14 @@ void		*ft_memcpy(void *dest, const void *src, unsigned int num)
 	//source 복사 할 메모리
 	//num복사할 데이터(값)의 길이
 	//길이를 계산할때 char* 타입의 문자열의 끝을 알리는 "\0"의 길이도 계산해야함 + 1
-	unsigned int i;
-	char *tmp;
-	const char *tmps;	
-	
-	tmps = src;
-	tmp = dest;
+	unsigned int i;	
+
 	i = 0;
 	while (i < num)
 	{
-		*tmp = *tmps;
-		tmp++;
-		tmps++;
+		*((char *)dest + i) = *((char *)src + i);
 		i++;
 	}
-	dest = tmp;
 	return (dest);
 }
 

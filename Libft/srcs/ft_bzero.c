@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/03 12:26:19 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/04 15:46:47 by tekim            ###   ########.fr       */
+/*   Created: 2021/05/04 13:21:04 by tekim             #+#    #+#             */
+/*   Updated: 2021/05/04 15:40:37 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tolower(int c)
+void					*ft_bzero(void *ptr, unsigned int size)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c - 'A' + 'a';
-	return (c);
+	unsigned int		i;
+
+	i = 0;
+	while (i < size)
+	{
+		*((char *)ptr + i) = 0;
+		i++;
+	}
+	return (ptr);
 }
