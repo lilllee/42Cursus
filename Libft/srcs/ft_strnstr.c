@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 12:31:50 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/04 15:46:14 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/05 13:41:21 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ char		*ft_strnstr(const char *str, const char *substr, unsigned int len)
 	while (str[i] && i < len)
 	{
 		j = 0;
-		while (str[j] == substr[j])
+		while (str[j] == substr[j] && str[j])
 		{
-			j++;
 			if (substr[i] == '\0')
 				return ((char *)str);
+			j++;
 		}
 		i++;
 	}

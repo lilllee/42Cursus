@@ -6,7 +6,7 @@
 /*   By: tekim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 20:54:32 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/03 21:19:51 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/05 11:18:17 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void		*ft_memccpy(void *dest, const void *src, int c, unsigned int n)
 		tmp++;
 		tmps++;
 		i++;
-		if (*tmps == (char)c) //
+		if (*tmps == (char)c)
 		{
 			tmps++;
 			*tmp = *tmps;

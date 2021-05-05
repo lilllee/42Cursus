@@ -6,13 +6,13 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:01:11 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/04 15:42:27 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/05 14:51:46 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_memcmp(void *s1, void *s2, unsigned int num)
+int					ft_memcmp(const void *s1, const void *s2, unsigned int num)
 {
 	char			*tmp1;
 	char			*tmp2;

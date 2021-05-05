@@ -6,20 +6,22 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 15:12:59 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/04 16:07:52 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/05 13:02:57 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-const char		*ft_strrchr(const char *str, int c)
+char		*ft_strrchr(const char *str, int c)
 {
+	char	*start;
+
+	start = (char *)str;
 	while (*str)
 		str++;
-	str--;
-	while (*str && *str != c)
+	while (str != start && *str != (char)c)
 		str--;
-	if (*str == c)
-		return (str);
-	return (NULL);
+	if (*str == (char)c)
+		return ((char *)str);
+	return (0);
 }
