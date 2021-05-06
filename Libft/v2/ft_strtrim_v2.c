@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:35:42 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/06 13:39:14 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/06 13:37:07 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 char			*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		start;
-	size_t		end;
-	char		*ret;
+	//s1 문자열 앞뒤에 set에 포함된 문자가 있으면 다 제거
+	size_t		start; //시작점
+	size_t		end;   //끝점
+	char		*ret;  //리턴
 
 	start = 0;
 	end = ft_strlen(s1);
