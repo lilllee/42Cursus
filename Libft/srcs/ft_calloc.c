@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:09:20 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/05 13:54:37 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/06 20:27:30 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void				*ft_calloc(unsigned int size, unsigned int count)
 {
-	unsigned char	*ptr;
+	void			*ptr;
 
-	ptr = (unsigned char *)malloc(size * count);
+	if (!(ptr = malloc(size * count)))
+		return (NULL);
 	ft_memset(ptr, 0, size * count);
 	return (ptr);
 }
