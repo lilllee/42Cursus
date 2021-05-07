@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 14:02:19 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/06 16:33:53 by tekim            ###   ########.fr       */
+/*   Created: 2021/05/04 16:35:42 by tekim             #+#    #+#             */
+/*   Updated: 2021/05/07 15:38:51 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				*ft_memmove(void *dest, const void *src, size_t num)
+char			*ft_strtrim(char const *s1, char const *set)
 {
-	size_t			i;
-	const char		*s;
-	char			*d;
+	size_t		start;
+	size_t		end;
+	char		*ret;
 
-	s = src;
-	d = dest;
-	i = 0;
-	if (dest > src)
+	ret = 0;
+	if (s1 != 0 && set != 0)
 	{
-		while (num)
-		{
-			if (num < 1)
-				break ;
-			*(d + num - 1) = *(s + num - 1);
-			num--;
-		}
+		start = 0;
+		end = ft_strlen(s1);
+		while (s1[start] && ft_strchr(set, s1[start]))
+			start++;
+		while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && end > start)
+			end--;
+		ret = (char *)malloc(sizeof(char) * (end - start + 1));
+		ft_strlcpy(ret, (char *)s1 + start, end - start + 1);
 	}
-	while (i < num)
-	{
-		*(d + i) = *(s + i);
-		i++;
-	}
-	return (dest);
+	return (ret);
 }

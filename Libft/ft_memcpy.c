@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/05/04 16:35:42 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/06 13:39:14 by tekim            ###   ########.fr       */
+/*   Created: 2021/05/04 13:58:18 by tekim             #+#    #+#             */
+/*   Updated: 2021/05/07 14:12:50 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strtrim(char const *s1, char const *set)
+void				*ft_memcpy(void *dest, const void *src, size_t num)
 {
-	size_t		start;
-	size_t		end;
-	char		*ret;
+	size_t			i;
 
-	start = 0;
-	end = ft_strlen(s1);
-	while (s1[start] && ft_strchr(set, s1[start]))
-		start++;
-	while (s1[end - 1] && ft_strchr(set, s1[end - 1]) && end > start)
-		end--;
-	if (!(ret = (char *)malloc(sizeof(char) * (end - start + 1))))
-		return (0);
-	ft_strlcpy(ret, (char *)s1 + start, end - start + 1);
-	return (ret);
+	i = 0;
+	if (src == NULL)
+		return (NULL);
+	while (i < num)
+	{
+		*((unsigned char *)dest + i) = *((unsigned char *)src + i);
+		i++;
+	}
+	return (dest);
 }
