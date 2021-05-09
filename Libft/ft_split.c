@@ -6,29 +6,32 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 16:37:32 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/07 18:03:23 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/09 16:30:25 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t			ft_len(char const *ptr, char c)
+static size_t	ft_len(char const *s, char c)
 {
 	size_t		size;
-	size_t		i;
 
 	size = 0;
-	i = 0;
-	while (ptr[i])
+	while (*s)
 	{
-		if (ptr[i] != c && ptr[i])
+		while (*s && *s == c)
+			s++;
+		if (*s != c && *s)
+		{
 			size++;
-		i++;
+			while (*s && *s != c)
+				s++;
+		}
 	}
 	return (size);
 }
 
-void		ft_strcpy2(char *dest, char const *src ,size_t from, size_t to)
+static void		ft_strcpy2(char *dest, char const *src, size_t from, size_t to)
 {
 	while (from < to)
 	{
@@ -36,12 +39,12 @@ void		ft_strcpy2(char *dest, char const *src ,size_t from, size_t to)
 		dest++;
 		from++;
 	}
-	dest = 0;
+	*dest = 0;
 }
 
-void		*memory_free(char **memf, size_t size_of_array)
+static void		*memory_free(char **memf, size_t size_of_array)
 {
-	size_t	i;
+	size_t		i;
 
 	i = 0;
 	while (i < size_of_array)
@@ -53,11 +56,11 @@ void		*memory_free(char **memf, size_t size_of_array)
 	return (NULL);
 }
 
-void				operate(char const *s, char c, char **ret)
+static void		operate(char const *s, char c, char **ret)
 {
-	size_t			i;
-	size_t			j;
-	size_t			k;
+	size_t		i;
+	size_t		j;
+	size_t		k;
 
 	i = 0;
 	j = 0;
@@ -76,25 +79,26 @@ void				operate(char const *s, char c, char **ret)
 			ft_strcpy2(ret[j], s, k, i);
 			j++;
 		}
-		else if (s[i])
-			i++;
+		if (!s[i])
+			break ;
+		i++;
 	}
 }
 
-char                **ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char			**ret;
-	size_t			len;
+	char		**ret;
+	size_t		len;
 
-	if (s == 0)
+	if (s == NULL)
 		return (NULL);
 	len = ft_len(s, c);
-	ret = (char **)malloc(sizeof(char *)*(len + 1));
+	ret = (char **)malloc(sizeof(char *) * (len + 1));
 	if (ret == 0)
 		return (NULL);
+	ret[len] = 0;
 	if (len == 0)
 		return (ret);
 	operate(s, c, ret);
-	ret[len] = 0;
 	return (ret);
 }

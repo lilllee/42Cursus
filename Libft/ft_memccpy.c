@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 13:59:27 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/06 18:21:06 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/09 11:16:38 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void				*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	size_t			i;
 
 	i = 0;
-	if (src == NULL || n == 0)
+	if (src == NULL && dest == NULL)
 		return (NULL);
 	while (i < n)
 	{
