@@ -6,24 +6,26 @@
 /*   By: tekim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 17:21:08 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/09 17:34:26 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 19:39:16 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//모든 노드를 삭제하는 함수
 void		ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	int		i;
+	t_list	*tmp;
+	t_list	*next;
 
-	i = 0;
 	if (lst == NULL || del == NULL)
 		return ;
-	while (lst[i])
+	tmp = *lst;
+	while (tmp)
 	{
-		del(lst->content);
-		free(lst);
-		i++;
+		next = tmp->next;
+		del(tmp->content);
+		free(tmp);
+		tmp = next;
 	}
 	*lst = 0;
 }

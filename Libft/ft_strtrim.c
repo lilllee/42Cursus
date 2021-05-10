@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:35:42 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/07 15:38:51 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 19:58:56 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char			*ft_strtrim(char const *s1, char const *set)
 {
+	//s1은 제거될 문자열
+	//set은 제거할 참조 문자열 s1의 맨 앞뒤를 제거
 	size_t		start;
 	size_t		end;
 	char		*ret;

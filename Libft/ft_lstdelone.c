@@ -6,12 +6,12 @@
 /*   By: tekim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 13:53:36 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/09 17:35:23 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 19:38:29 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//특정 노드를 삭제하는 함수
 void			ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (lst == NULL || del == NULL)

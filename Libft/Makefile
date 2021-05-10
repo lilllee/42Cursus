@@ -2,13 +2,13 @@ NAME = libft.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -c
+CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-INCLUDES = ./libft.h
+INCLUDES = libft.h
 
-SRCS1	= ft_strlen.c	    \
+SRCS	= ft_strlen.c	    \
 		  ft_strlcpy.c		\
 		  ft_strlcat.c		\
 		  ft_strchr.c		\
@@ -33,8 +33,7 @@ SRCS1	= ft_strlen.c	    \
 		  ft_strdup.c		\
 		  ft_tolower.c		\
 		  ft_toupper.c		\
-
-SRCS2	= ft_substr.c		\
+		  ft_substr.c		\
 		  ft_strjoin.c		\
 		  ft_strtrim.c		\
 		  ft_split.c		\
@@ -55,8 +54,7 @@ SRCS_BN = ft_lstnew.c		\
 		  ft_lstmap.c		\
 		  ft_lstdelone.c	\
 
-SOURCES = $(SRCS1)			\
-		$(SRCS2)            \
+SOURCES = $(SRCS)
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -65,20 +63,20 @@ OBJECTS_BONUS = $(SRCS_BN:.c=.o)
 all: $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) -c  $< -o $@
 	
 $(NAME): $(OBJECTS)
-	ar cr $@ $^
+	ar crs $@ $^
 
 clean:
 	rm -f $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
-	rm -f $(OBJECTS) $(OBJECTS_BONUS)
+	rm -f $(NAME)
 
-bonus: $(OBJECTS) $(OBJECTS_BONUS)
-	ar cr $@ $(NAME) $^
+bonus: $(OBJECTS_BONUS)
+	ar crs $(NAME) $(OBJECTS_BONUS)
 
 re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re bonus

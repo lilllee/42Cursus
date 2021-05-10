@@ -6,15 +6,16 @@
 /*   By: tekim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:46:39 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/09 12:17:56 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 19:35:11 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstadd_front(t_list **lst, t_list *new)
+//리스트의 시작부분에 new를 추가(앞쪽에 새로운 노드를 추가)
+void		ft_lstadd_front(t_list **lst, t_list *new)// lst는 첫번째 링크드리스트의 포인터 주소 new는 추가를 위한 포인터 주소
 {
-	if(new == NULL || lst == NULL)
+	if (new == NULL || lst == NULL) //예외처리 값이 비어있으면 프로그램 종료
 		return ;
 	if (*lst)
 		new->next = *lst;

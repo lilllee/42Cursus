@@ -6,21 +6,21 @@
 /*   By: tekim <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 11:38:57 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/09 11:41:51 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 22:31:43 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstnew(void *content)
+t_list		*ft_lstnew(void *content)//새로운 요소를 만듬
 {
 	t_list	*ret;
 
 	ret = (t_list *)malloc(sizeof(t_list));
 	if (ret)
 	{
-		ret->content = content;
-		ret->next = NULL;
+		ret->content = content;//화살표로 구조체 멤버에 접근하여 요소를 추가
+		ret->next = NULL;//서브젝트에 나와 있는대로 널로 초기화  
 	}
 	return (ret);
 }

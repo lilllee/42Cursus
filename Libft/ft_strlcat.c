@@ -6,26 +6,16 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:33:16 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/04 15:44:23 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 20:15:18 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-unsigned int		ft_strlen2(char *str)
+//dest의 마지막 위치에 src를 size - strlen(dst) - 1만큼 복사
+size_t			ft_strlcat(char *dest, char *src, size_t size)
 {
-	unsigned int i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int i;
-	unsigned int n;
+	size_t		i;//dest의 인덱스
+	size_t		n;//src의 인덱스
 
 	i = 0;
 	n = 0;
@@ -40,3 +30,5 @@ unsigned int		ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[i + n] = '\0';
 	return (i + ft_strlen(src));
 }
+//if (size < dst) (strlen(src) + size) return
+//if (dst > size) (strlen(src) + strlen(dst)) return
