@@ -6,12 +6,12 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 12:31:50 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/10 20:17:58 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 14:38:58 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//문자열 내에서 부분문자열을 탐색하는 함수 len 만큼 탐색함
+
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

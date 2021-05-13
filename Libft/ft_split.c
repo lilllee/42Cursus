@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 16:37:32 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/09 16:30:25 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/10 23:40:44 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void		ft_strcpy2(char *dest, char const *src, size_t from, size_t to)
 	*dest = 0;
 }
 
-static void		*memory_free(char **memf, size_t size_of_array)
+static char		**memory_free(char **memf, size_t size_of_array)
 {
 	size_t		i;
 
@@ -56,7 +56,7 @@ static void		*memory_free(char **memf, size_t size_of_array)
 	return (NULL);
 }
 
-static void		operate(char const *s, char c, char **ret)
+static char		**operate(char const *s, char c, char **ret)
 {
 	size_t		i;
 	size_t		j;
@@ -72,10 +72,7 @@ static void		operate(char const *s, char c, char **ret)
 			while (s[i] != 0 && s[i] != c)
 				i++;
 			if (!(ret[j] = (char *)malloc(sizeof(char) * (i - k + 1))))
-			{
-				memory_free(ret, j);
-				return ;
-			}
+				return (memory_free(ret, j));
 			ft_strcpy2(ret[j], s, k, i);
 			j++;
 		}
@@ -83,6 +80,7 @@ static void		operate(char const *s, char c, char **ret)
 			break ;
 		i++;
 	}
+	return (ret);
 }
 
 char			**ft_split(char const *s, char c)
@@ -99,6 +97,5 @@ char			**ft_split(char const *s, char c)
 	ret[len] = 0;
 	if (len == 0)
 		return (ret);
-	operate(s, c, ret);
-	return (ret);
+	return (operate(s, c, ret));
 }

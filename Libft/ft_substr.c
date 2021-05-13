@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 14:49:55 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/10 19:56:52 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/04 16:07:26 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,8 @@
 
 char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	//len은 하위 문자열의 최대길이
-	//s==하위 문자열을 만들 문자열
-	//start는 시작할 인덱스 문자
 	size_t	i;
-	size_t	lens;//s의 길이
+	size_t	lens;
 	char	*ret;
 
 	if (!s)
