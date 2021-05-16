@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 14:39:10 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/13 18:19:06 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/14 18:27:06 by kimts            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdio.h>
-int			per_next(const char *c, ...)
+/*int			per_next(const char *c, ...)
 {
 	//if (c == 'c')
 	
 	//else if (c == 'd')
 }
-
-void		ft_putchar(char c)
+*/
+void ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void		ft_putnbr(int n)
+void ft_putnbr(int n)
 {
 	if (n == -2147483648)
 	{
@@ -47,10 +47,10 @@ void		ft_putnbr(int n)
 		ft_putchar('0' + n % 10);
 	}
 }
-int			ft_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
-	va_list	ap;
-	
+	va_list ap;
+
 	char c;
 	char *str;
 	int i = 0;
@@ -97,10 +97,11 @@ int			ft_printf(const char *format, ...)
 int main(void)
 {
 	char i = 'k';
+	char c = 'j';
 	int num = -1234;
 	char *str = "tekim";
 	ft_printf("%s\n", str);
-	ft_printf("asd%casd%c\n", i , i);
+	ft_printf("asd%casd%c\n", i, c);
 	ft_printf("%d\n", num);
 	ft_printf("%u\n", num);
 }
