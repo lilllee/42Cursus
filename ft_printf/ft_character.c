@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_character.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 16:59:45 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/14 19:03:22 by kimts            ###   ########.fr       */
+/*   Updated: 2021/05/17 13:42:55 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int ft_int_len(int n)
 	return (i);
 }
 */
-int ft_cwidth(const char *format)
+int		ft_cwidth(const char *format)
 {
 	int tmp;
 
@@ -54,7 +54,7 @@ int ft_cwidth(const char *format)
 	return (0);
 }
 
-int ft_character(const char *format, char c)
+int		ft_character(const char *format, char c)
 {
 	int tmp;
 

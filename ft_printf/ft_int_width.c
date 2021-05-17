@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_width.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 17:19:11 by kimts             #+#    #+#             */
-/*   Updated: 2021/05/14 17:28:31 by kimts            ###   ########.fr       */
+/*   Updated: 2021/05/17 17:34:55 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,29 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int ft_width(const char *format)
+void		ft_int_width(const char *format_w, int n)
 {
-	int tmp;
+	int	tmp;
+	char *ps; //n을 str로 전환한 값을 저장
+	
+	ps = ft_itoa(n);
+	tmp = ft_atoi(format_w);//*format_w는 %[10]d,s,c 에서 10에 해당함
 
-	while (*format)
+	if (tmp < 0)
+		tmp *= -1;
+	while (*format_w)
 	{
-		while (*format != '%' && *format)
-			format++;
-		if (*(format + 1) >= '0' && *(format + 1) <= '9')
+		while (*format_w != '%' && *format_w)
+			format_w++; // format의 값은 %에 위치해 있음
+		format_w++;
+		if ((*format_w >= '0' && *format_w <= '9') || *format_w == '-')
 		{
-			format++;
-			tmp = atoi(format);
-			while (tmp--)
+			tmp = ft_atoi(format_w);
+			if (tmp < 0)
+				tmp *= -1;
+			tmp -= ft_strlen(ps);
+			while (tmp-- > 0)
 				write(1, " ", 1);
 		}
 	}
-	return (0);
 }

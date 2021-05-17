@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tekim <tekim@student.42.fr>                +#+  +:+       +#+         #
+#    By: tekim <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/10 23:42:04 by tekim             #+#    #+#              #
-#    Updated: 2021/05/17 17:26:45 by tekim            ###   ########.fr        #
+#    Updated: 2021/05/10 23:42:07 by tekim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-INCLUDES = libft/libft.h
+INCLUDES = libft.h
 
 SRCS	= ft_strlen.c	    \
 		  ft_strlcpy.c		\
