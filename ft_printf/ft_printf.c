@@ -6,7 +6,7 @@
 /*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/13 14:39:10 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/17 13:48:52 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/18 16:20:13 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,24 +65,21 @@ int			ft_printf(const char *format, ...)
 		}
 		if (format[i + 1] == 'd')
 		{
-			i++;
 			k = va_arg(ap, int);
 			ft_putnbr(k);
-			i++;
+			i+=2;
 		}
 		else if (format[i + 1] == 'c')
 		{
-			i++;
 			c = va_arg(ap, char);
 			write(1, &c, 1);
-			i++;
+			i+=2;
 		}
 		else if (format[i + 1] == 's')
 		{
-			i++;
 			str = va_arg(ap, char *);
 			write(1, str, strlen(str));
-			i++;
+			i+=2;
 		}
 		else if (format[i + 1] == 'u')
 		{
