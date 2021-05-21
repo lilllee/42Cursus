@@ -3,18 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/14 18:06:48 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/14 18:24:27 by kimts            ###   ########.fr       */
+/*   Updated: 2021/05/21 16:24:02 by tekim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
-#define GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 #include <unistd.h>
 #include <stdlib.h>
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1024
+#endif
+
+#ifndef OPEN_MAX
+# define OPEN_MAX 10496
+#endif
 
 int get_next_line(int fd, char **line);
 
