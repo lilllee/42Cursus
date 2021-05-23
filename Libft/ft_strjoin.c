@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tekim <tekim@student.42.fr>                +#+  +:+       +#+        */
+/*   By: kimts <kimts@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/04 16:21:43 by tekim             #+#    #+#             */
-/*   Updated: 2021/05/05 11:42:13 by tekim            ###   ########.fr       */
+/*   Updated: 2021/05/23 16:19:04 by kimts            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char			*ft_strjoin(char const *s1, char const *s2)
 	ft_memcpy(result, s1, len1);
 	ft_memcpy(result + len1, s2, len2);
 	result[len1 + len2] = 0;
+	free((char *)s1);
 	return (result);
 }
